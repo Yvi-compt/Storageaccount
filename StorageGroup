@@ -1,11 +1,11 @@
-resource "azurerm_resource_group" "Storage_Group" {
-  name     = "Storage_resource_group"
+resource "azurerm_resource_group" "storagegroup" {
+  name     = "storageresourcegroup"
   location = "eastus"
 }
 
 resource "azurerm_storage_account" "example" {
   name                     = "storageaccount"
-  resource_group_name      = Storage_resource_group
+  resource_group_name      = storageresourcegroup
   location                 = eastus
   account_tier             = "Standard"
   account_replication_type = "GRS"
