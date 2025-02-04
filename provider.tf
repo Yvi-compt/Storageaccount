@@ -8,7 +8,7 @@ terraform{
   required_version=">=1.4.0"#this version is for Terraform Version, NOT azurerm
 }
 
-provider "azurerm"{
+provider "azurermyv"{
   features{}  
   subscription_id=var.subscription_id
   client_id=var.client_id
