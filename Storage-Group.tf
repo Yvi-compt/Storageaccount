@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "storagerg" {
 }
 
 resource "azurerm_storage_account" "storageaccount" {
-  name                     = "storageaccount-yp"
+  name                     = "storageaccountyp"
   resource_group_name      = azurerm_resource_group.storagerg.name
   location                 = azurerm_resource_group.storagerg.location
   account_tier             = "Standard"
