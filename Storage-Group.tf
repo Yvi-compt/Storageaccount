@@ -1,4 +1,4 @@
-provider "azurerm" {
+provider "azurerm"{
     feature {}
 }
 resource "azurerm_resource_group" "storagerg" {
