@@ -11,7 +11,7 @@ variable "client_secret"{
 variable "tenant_id"{
   type=string
 }
-variable "storage_id"{
+/* variable "storage_id"{
   type=string
   
-}
+}*/
