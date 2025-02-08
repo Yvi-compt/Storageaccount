@@ -13,5 +13,5 @@ variable "tenant_id"{
 }
 variable "storage_id"{
   type=string
-  
+  account_tier = var.account_tier
 }
