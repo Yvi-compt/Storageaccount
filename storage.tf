@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "yvistorageaccount" {
+/*resource "azurerm_storage_account" "yvistorageaccount" {
   name                     = "yistorageaccountname"
   resource_group_name      = azurerm_resource_group.storagerg.name
   location                 = azurerm_resource_group.storagerg.location
@@ -31,3 +31,4 @@ resource "azurerm_storage_account" "yvistorageaccountp" {
     environment = "staging"
   }
 }
+*/
