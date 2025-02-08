@@ -19,6 +19,15 @@ variable "storage_account_names" {
     "yvistorageaccountname5"
   ]
 }
-resource "azurerm_storage_account" "yvistorageaccount"{
-count       = length(var.storage_accunt_names)
-name        =var.storage_account_names[count.index]
+resource "azurerm_storage_account" "yvistorageaccountp" {
+  count                    = length(var.storage_account_names)
+  name                     = var.storage_account_names[count.index]
+  resource_group_name      = azurerm_resource_group.mcit420zz5um.name
+  location                 = azurerm_resource_group.mcit420zz5um.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags = {
+    environment = "staging"
+  }
+}
