@@ -13,5 +13,5 @@ variable "tenant_id"{
 }
 /* variable "storage_id"{
   type=string
-  
+ default = "premium" 
 }*/
