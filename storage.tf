@@ -12,13 +12,13 @@ resource "azurerm_storage_account" "yvistorageaccount" {
 variable "storage_account_names" {
   type    = list(string)
   default = [
-    "storageaccountname1",
-    "storageaccountname2",
-    "storageaccountname3",
-    "storageaccountname4",
-    "storageaccountname5"
+    "yvistorageaccountname1",
+    "yvistorageaccountname2",
+    "yvistorageaccountname3",
+    "yvistorageaccountname4",
+    "yvistorageaccountname5"
   ]
 }
 resource "azurerm_storage_account" "yvistorageaccount"{
-conut       = length(var.storage_accunt_names)
+count       = length(var.storage_accunt_names)
 name        =var.storage_account_names[count.index]
