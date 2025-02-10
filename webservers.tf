@@ -5,7 +5,7 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
   resource_group_name   = azurerm_resource_group.storagerg.name
   vm_size               = "Standard_B1s"
 
-}
+
   # Assuming you have an existing network and image
   network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
   storage_image_reference {
