@@ -5,7 +5,7 @@ resource "azurerm_virtual_network" "virnet" {
   resource_group_name = azurerm_resource_group.storagerg.name
 }
 
-resource "azurerm_subnet" "subneta" {
+resource "azurerm_subnet" "virsubneta" {
   name                 = "subnet-a"
   resource_group_name  = azurerm_resource_group.storagerg.name
   virtual_network_name = azurerm_virtual_network.virnet.name
