@@ -36,18 +36,7 @@ storage_os_disk {
     admin_username = "adminuser"
     admin_password = "P@ssword1234"  # Use Azure Key Vault for security
   }
- /* os_disk {
-    name              = "${var.mcitvm_names[count.index]}-os-disk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
-  }
-*/
-
-/*  admin_username = "adminuser"
-  admin_password = "P@ssword1234"  # Use a more secure method like Azure Key Vault
-*/
-  
+ 
      os_profile_linux_config {
       disable_password_authentication = false
   }
