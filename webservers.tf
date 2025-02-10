@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "yvirnic" {
-  count               = 10  # Creates two NICs dynamically
+  count               = 10  # Creates ten NICs dynamically
   name                = "nic-${count.index}"
   location            = azurerm_resource_group.storagerg.location
   resource_group_name = azurerm_resource_group.storagerg.name
