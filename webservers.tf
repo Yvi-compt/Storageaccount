@@ -6,8 +6,8 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
   vm_size               = "Standard_B1s"
 
 resource "azurerm_network_interface" "yvirnic" {
-  for_each            = toset(var.yvinet_interfaces)
-  name                = each.key
+  count               = 10  # Creates two NICs dynamically
+  name                = "nic-${count.index}"
   location            = azurerm_resource_group.storagerg.location
   resource_group_name = azurerm_resource_group.storagerg.name
 
