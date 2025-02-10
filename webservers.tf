@@ -1,8 +1,8 @@
 resource "azurerm_virtual_machine" "mcityvesvm" {
   count                 = length(var.mcitvm_names)
   name                  = var.mcitvm_names[count.index]
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
+  location              = azurerm_resource_group.storagerg.location
+  resource_group_name   = azurerm_resource_group.storagerg.name
   vm_size               = "Standard_B1s"
 
   # Assuming you have an existing network and image
@@ -15,7 +15,7 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
   }
 
   os_disk {
-    name              = "${var.vm_names[count.index]}-os-disk"
+    name              = "${var.mcitvm_names[count.index]}-os-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
