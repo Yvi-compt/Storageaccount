@@ -5,6 +5,18 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
   resource_group_name   = azurerm_resource_group.storagerg.name
   vm_size               = "Standard_B1s"
 
+resource "azurerm_network_interface" "yvirnic" {
+  for_each            = toset(var.yvinet_interfaces)
+  name                = each.key
+  location            = azurerm_resource_group.storagerg.location
+  resource_group_name = azurerm_resource_group.storagerg.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.virsubneta.id
+    private_ip_address_allocation = "Dynamic"
+  }
+  }
 
   # Assuming you have an existing network and image
   network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
