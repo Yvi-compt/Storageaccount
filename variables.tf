@@ -17,7 +17,7 @@ variable "tenant_id"{
 }*/
 variable "mcitvm_names" {
   type    = list(string)
-  default = ["web-server-1", "web-server-2", "web-server-3", webserver-4, webserver-5, webserver-6, webserver-7, webserver-8,webserver-9, webserver-10]
+  default = ["web-server-1", "web-server-2", "web-server-3", "webserver-4", "webserver-5", "webserver-6", "webserver-7", "webserver-8","webserver-9", "webserver-10"]
 }
 variable "yvinet_interfaces" {
   type    = list(string)
