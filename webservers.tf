@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "yvirnic" {
   }
 resource "azurerm_virtual_machine" "mcityvesvm" {
   count                 = 10  # Same count as the NICs
-  name                  = "vm-${count.index}"
+  name                  = "mcityvesvm-${count.index}"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   vm_size               = "Standard_B1s"
