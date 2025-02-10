@@ -1,6 +1,6 @@
-resource "azurerm_virtual_machine" "vm" {
-  count                 = length(var.vm_names)
-  name                  = var.vm_names[count.index]
+resource "azurerm_virtual_machine" "mcityvesvm" {
+  count                 = length(var.mcitvm_names)
+  name                  = var.mcitvm_names[count.index]
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   vm_size               = "Standard_B1s"
