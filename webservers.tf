@@ -9,8 +9,8 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
 resource "azurerm_network_interface" "nic" {
   for_each            = toset(var.yvinet_interfaces)
   name                = each.key
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.storagerg.location
+  resource_group_name = azurerm_resource_group.storagerg.name
 
   ip_configuration {
     name                          = "internal"
