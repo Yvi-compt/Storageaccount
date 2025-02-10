@@ -47,6 +47,8 @@ storage_os_disk {
 /*  admin_username = "adminuser"
   admin_password = "P@ssword1234"  # Use a more secure method like Azure Key Vault
 */
-    os_profile_linux_config {
-    disable_password_authentication = false
+   { 
+     os_profile_linux_config {
+      disable_password_authentication = false
+  }
 }
