@@ -11,14 +11,4 @@ resource "azurerm_subnet" "virsubneta" {
   virtual_network_name = azurerm_virtual_network.virnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
-resource "azurerm_network_interface" "yvirnic" {
-  for_each            = toset(var.yvinet_interfaces)
-  name                = each.key
-  location            = azurerm_resource_group.storagerg.location
-  resource_group_name = azurerm_resource_group.storagerg.name
 
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.virsubneta.id
-    private_ip_address_allocation = "Dynamic"
-  }
