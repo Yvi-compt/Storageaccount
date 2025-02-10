@@ -16,12 +16,9 @@ resource "azurerm_virtual_machine" "mcityvesvm" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   vm_size               = "Standard_B1s"
-  network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
-
-
-
+ 
   # Assuming you have an existing network and image
-  network_interface_ids = [azurerm_network_interface.yvinet_interfaces[count.index].id]
+  network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
