@@ -20,7 +20,7 @@ resource "azurerm_service_plan" "yviplan" {
 resource "azurerm_windows_web_app" "yviazurwebapp" {
   name                = "example"
   resource_group_name = azurerm_resource_group.storagerg.name
-  location            = azurerm_service_plan.storagerg.location
+  location            = azurerm_service_plan.yviplan.location
   service_plan_id     = azurerm_service_plan.yviplan.id
 
   site_config {}
