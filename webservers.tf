@@ -19,7 +19,7 @@ resource "azurerm_network_interface" "yvirnic" {
   }
 
   # Assuming you have an existing network and image
-  network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
+  network_interface_ids = [azurerm_network_interface.nic[count.index].id]
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
