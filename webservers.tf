@@ -1,10 +1,3 @@
-resource "azurerm_virtual_machine" "mcityvesvm" {
-  count                 = length(var.mcitvm_names)
-  name                  = var.mcitvm_names[count.index]
-  location              = azurerm_resource_group.storagerg.location
-  resource_group_name   = azurerm_resource_group.storagerg.name
-  vm_size               = "Standard_B1s"
-
 resource "azurerm_network_interface" "yvirnic" {
   count               = 10  # Creates two NICs dynamically
   name                = "nic-${count.index}"
@@ -17,6 +10,15 @@ resource "azurerm_network_interface" "yvirnic" {
     private_ip_address_allocation = "Dynamic"
   }
   }
+resource "azurerm_virtual_machine" "mcityvesvm" {
+  count                 = 10  # Same count as the NICs
+  name                  = "vm-${count.index}"
+  location              = azurerm_resource_group.rg.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  vm_size               = "Standard_B1s"
+  network_interface_ids = [azurerm_network_interface.yvirnic[count.index].id]
+
+
 
   # Assuming you have an existing network and image
   network_interface_ids = [azurerm_network_interface.yvinet_interfaces[count.index].id]
