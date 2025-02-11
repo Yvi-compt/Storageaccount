@@ -33,8 +33,8 @@ storage_os_disk {
   }
  os_profile {
     computer_name  = "mcityvesvm-${count.index}"
-    admin_username = var.admin
-    admin_password = var.password  # Use Azure Key Vault for security
+    admin_username = var.admin_user
+    admin_password = var.admin_password  # Use Azure Key Vault for security
   }
  
      os_profile_linux_config {
