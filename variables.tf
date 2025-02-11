@@ -24,3 +24,5 @@ variable "yvinet_interfaces" {
   default = ["nic-web1", "nic-web2", "nic-web3", "nic-web4","nic-web5", "nic-web6", "nic-web7", "nic-web8","nic-web9", "nic-web10"]
  
 }
+variable "{
+admin
