@@ -27,7 +27,7 @@ variable "yvinet_interfaces" {
 variable "admin_user"{
 type=string
 }
-variable "admin-password"{
+variable "admin_password"{
 type=string
 }
 
