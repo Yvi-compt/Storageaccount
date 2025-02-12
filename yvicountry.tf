@@ -1,4 +1,4 @@
-variable "countries" {
+/*variable "countries" {
   description = "A map of country names and their citizen"
   type        = map(string)
   default = {
@@ -31,4 +31,4 @@ output "restaurant_join" {
 output "formatted_restaurant" {
   description = "Format restaurant name by replacing, uppercasing, and extracting substring"
   value       = substr(upper(replace("La Banquise", "La ", "")), 0, 5)
-}
+}*/
