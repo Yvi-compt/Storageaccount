@@ -1,7 +1,11 @@
+resource "azurerm_resource_group" "storageyrg" {
+  name     = "Storage.rg"
+  location = "eastus"
+}
 resource "azurerm_kubernetes_cluster""yviaks"{
 name        =var.aks_cluster_name
-location    =azurer_resource_group.storagerg.location
-resource_group_name = azurerm_resource_group.storagerg.name
+location    =azurer_resource_group.storageyrg.location
+resource_group_name = azurerm_resource_group.storageyrg.name
  dns_prefix          = var.aks_cluster_name
 
  default_node_pool {
