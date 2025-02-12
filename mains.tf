@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "storageyrg" {
 }
 resource "azurerm_kubernetes_cluster""yviaks"{
 name        =var.aks_cluster_name
-location    =azurer_resource_group.storageyrg.location
+location    =azurerm_resource_group.storageyrg.location
 resource_group_name = azurerm_resource_group.storageyrg.name
  dns_prefix          = var.aks_cluster_name
 
