@@ -1,4 +1,4 @@
-resource "azurerm_kubernetes_clusteer""yviaks"{
+resource "azurerm_kubernetes_cluster""yviaks"{
 name        =var.aks_cluster_name
 location    =azurer_resource_group.storagerg.location
 resource_group_name = azurerm_resource_group.storagerg.name
