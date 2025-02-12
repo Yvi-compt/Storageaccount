@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "yvicluster" {
   }
 }
 
-output "client_certificate" {
+/*output "client_certificate" {
   value     = azurerm_kubernetes_cluster.yvicluster.kube_config[0].client_certificate
   sensitive = true
 }
@@ -33,4 +33,4 @@ output "kube_config" {
   value = azurerm_kubernetes_cluster.yvicluster.kube_config_raw
 
   sensitive = true
-}
+}*/
